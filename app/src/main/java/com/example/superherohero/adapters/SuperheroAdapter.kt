@@ -7,11 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.leagueofheroes.data.Superhero
+import com.example.superherohero.data.Superhero
 import com.example.superherohero.R
 import com.squareup.picasso.Picasso
 
-class SuperheroAdapter(var items: List<Superhero>) : Adapter<SuperheroViewHolder>() {
+class SuperheroAdapter(var items: List<Superhero>, val onItemClick: (Int) -> Unit) : Adapter<SuperheroViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_superhero, parent, false)
@@ -23,6 +23,9 @@ class SuperheroAdapter(var items: List<Superhero>) : Adapter<SuperheroViewHolder
     override fun onBindViewHolder(holder: SuperheroViewHolder, position: Int) {
         val superhero = items[position]
         holder.render(superhero)
+        holder.itemView.setOnClickListener {
+            onItemClick(position)
+        }
     }
 }
 

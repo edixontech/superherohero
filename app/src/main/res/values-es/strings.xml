@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">superherohero</string>
+
+
+
+    <string name="action_search">Buscar</string>
+
+    <string name="menu_biography">Biografía</string>
+    <string name="menu_appearance">Apariencia</string>
+    <string name="menu_stats">Stats</string>
+
+    <string name="label_real_name">Nombre real:</string>
+
+</resources>
